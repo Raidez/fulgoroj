@@ -1,0 +1,60 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Area2D",
+"class": &"Firefly",
+"language": &"GDScript",
+"path": "res://scripts/firefly.gd"
+}, {
+"base": "Area2D",
+"class": &"Lantern",
+"language": &"GDScript",
+"path": "res://scripts/lantern.gd"
+}]
+_global_script_class_icons={
+"Firefly": "",
+"Lantern": ""
+}
+
+[application]
+
+config/name="Fulgoroj"
+run/main_scene="res://scenes/main.tscn"
+config/icon="res://icon.png"
+config/features=PackedStringArray("4.0", "Vulkan Clustered")
+
+[display]
+
+window/size/viewport_width=600
+
+[input]
+
+light_lantern={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
+]
+}
+increase_lantern={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"button_mask":8,"position":Vector2(223, 103),"global_position":Vector2(223, 103),"factor":1.0,"button_index":4,"pressed":true,"double_click":false,"script":null)
+]
+}
+decrease_lantern={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"button_mask":16,"position":Vector2(260, 136),"global_position":Vector2(260, 136),"factor":2.0,"button_index":5,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[rendering]
+
+batching/options/use_batching=true
+batching/options/use_batching_in_editor=true
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
