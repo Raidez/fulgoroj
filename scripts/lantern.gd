@@ -38,7 +38,7 @@ func _ready():
 	# taille de la lanterne
 	radius = 50
 
-func _process(delta):
+func _process(_delta):
 	# la lanterne suit la souris
 	position = get_viewport().get_mouse_position()
 	

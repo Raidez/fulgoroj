@@ -17,7 +17,7 @@ func _ready():
 		add_child(firefly)
 		fireflies.append(firefly)
 
-func _process(delta):
+func _process(_delta):
 	# bruitage
 	var catched = fireflies.filter(func(x): return x.is_jittery).size()
 	if catched > 0 and !lantern.sound.playing:

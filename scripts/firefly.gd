@@ -8,7 +8,7 @@ class_name Firefly
 const padding = 10
 
 # couleur
-@onready var tween := get_tree().create_tween().set_loops()
+var tween : Tween
 const BRIGHT_COLOR = Color8(173, 255, 0)
 const DARKER_COLOR = Color8(26, 36, 7)
 var color := BRIGHT_COLOR
@@ -61,8 +61,9 @@ func _ready():
 	radius = randi_range(4, 7)
 	
 	# animation
+	tween = self.create_tween().set_loops()
 	tween.tween_property(self, "color", DARKER_COLOR, countdown)
-	tween.tween_property(self, "color", BRIGHT_COLOR, 0)
+	tween.tween_property(self, "color", BRIGHT_COLOR, 0.1)
 	tween.custom_step(timer)
 
 func _process(delta):
