@@ -1,9 +1,9 @@
 extends Control
 
-@onready var timer = $Timer as Timer
-@onready var animation = $FadingMessage as AnimationPlayer
-var was_clicked := false
-var is_visible := false
+onready var timer = $Timer
+onready var animation = $AnimationPlayer
+var was_clicked = false
+var is_visible = false
 
 func _input(event):
 	# le message disparaît après une action du joueur
@@ -16,8 +16,9 @@ func _input(event):
 		if is_visible:
 			animation.stop(false)
 			animation.playback_speed = 3.5
-			animation.play_backwards("fade_in")
+			animation.play_backwards("message_fadein")
 
-func _on_timer_timeout():
-	animation.play("fade_in")
+
+func _on_Timer_timeout():
+	animation.play("message_fadein")
 	is_visible = true

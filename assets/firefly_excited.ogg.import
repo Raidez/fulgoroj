@@ -1,14 +1,13 @@
 [remap]
 
-importer="oggvorbisstr"
+importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-uid="uid://dy2cr4oselk8g"
-path="res://.godot/imported/firefly_excited.ogg-43cdadae8a9e8d356762a01092f5352c.oggvorbisstr"
+path="res://.import/firefly_excited.ogg-43cdadae8a9e8d356762a01092f5352c.oggstr"
 
 [deps]
 
 source_file="res://assets/firefly_excited.ogg"
-dest_files=["res://.godot/imported/firefly_excited.ogg-43cdadae8a9e8d356762a01092f5352c.oggvorbisstr"]
+dest_files=[ "res://.import/firefly_excited.ogg-43cdadae8a9e8d356762a01092f5352c.oggstr" ]
 
 [params]
 

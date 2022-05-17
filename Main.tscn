@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Firefly.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Message.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Lantern.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/music.ogg" type="AudioStream" id=4]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=5]
+
+[node name="Main" type="Node"]
+script = ExtResource( 5 )
+
+[node name="Message" parent="." instance=ExtResource( 2 )]
+
+[node name="Lantern" parent="." instance=ExtResource( 3 )]
+position = Vector2( 323, 357 )
+
+[node name="Fireflies" type="Node2D" parent="."]
+
+[node name="Firefly" parent="Fireflies" instance=ExtResource( 1 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+autoplay = true
+
+[connection signal="body_entered" from="Lantern" to="." method="_on_Lantern_body_entered"]
+[connection signal="body_exited" from="Lantern" to="." method="_on_Lantern_body_exited"]
